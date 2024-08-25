@@ -1,11 +1,8 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int SIDE;
-int MINES;
-int BEGINNER=0;
-int INTERMEDIATE=1;
-int ADVANCED=2;
+int SIDE=9;
+int MINES=10;
 int MAXSIDE=25;
 int MAXMINES=99;
 int MAXSIZE=526;
@@ -35,7 +32,7 @@ public:
     }
 
     void makeMove(int* x, int* y) {
-        cout << "Enter your move, (row, column) -> ";
+        cout << "Enter your move, (row, column): ";
         cin >> *x >> *y;
         return;
     }
@@ -189,36 +186,13 @@ public:
     }
 };
 
-void chooseDifficultyLevel() {
 
-    int level;
-	cout<<"Enter the Difficulty of the game:"<<endl;
-	cout<<"Press 0 for beginer level."<<endl;  // 9x9;
-	cout<<"Press 1 for intermediate level."<<endl;  //16x16
-	cout<<"Press 2 for hard level."<<endl;  // 24x24
-
-    cin >> level;
-
-    if (level == BEGINNER) {
-        SIDE = 9;
-        MINES = 10;
-    }
-
-    if (level == INTERMEDIATE) {
-        SIDE = 16;
-        MINES = 40;
-    }
-
-    if (level == ADVANCED) {
-        SIDE = 24;
-        MINES = 99;
-    }
-}
 
 int main() {
     Board myBoard, realBoard;
     Game* game = new Game();
-    chooseDifficultyLevel();
+    cout<<"Welcome To minesweeper Game!!"<<endl;
+    cout<<"Let's start the game...."<<endl;
     game->playMinesweeper(myBoard, realBoard);
     return 0;
 }
