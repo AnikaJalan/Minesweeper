@@ -150,12 +150,6 @@ public:
         }
     }
 
-    void cheatMinesweeper(Board& realBoard) {
-        cout << "The mines locations are-\n";
-        realBoard.printBoard();
-        return;
-    }
-
     void playMinesweeper(Board& realBoard, Board& myBoard) {
         bool gameOver = false;
         int movesLeft = SIDE * SIDE - MINES, x, y;
